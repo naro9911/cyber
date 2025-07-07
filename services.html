@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>خدمات تقنية وتصميمية</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white font-sans">
+
+  <!-- Welcome Message -->
+  <div class="w-full bg-gradient-to-l from-pink-600 via-indigo-600 to-purple-600 py-6 px-4 text-center shadow-lg mb-4 rounded-b-3xl animate-pulse">
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">مرحباً بك في منصة الخدمات التقنية والتصميمية!</h2>
+    <p class="text-lg md:text-xl text-white opacity-90">
+      نحن هنا لنقدم لك أفضل الحلول الرقمية، البرمجة، التصميم، التسويق، الأمان، والمزيد... <span class="font-bold text-yellow-300">وبأرخص الأسعار وأقوى العروض التنافسية</span> في السوق.
+    </p>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 py-16 px-6 text-center shadow-lg">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">خدمات تقنية وتصميمية</h1>
+    <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">
+      حلول تقنية، تصاميم، وبرمجة <span class="font-bold text-yellow-300">بأرخص الأسعار وأقوى العروض التنافسية</span>.
+    </p>
+    <a href="#contact" class="mt-8 inline-block bg-black text-white py-3 px-8 rounded-full font-semibold hover:bg-gray-800 transition duration-300">
+      ابدأ الآن
+    </a>
+  </header>
+
+  <!-- Filters -->
+  <section class="py-8 px-6 bg-gray-800">
+    <div class="max-w-6xl mx-auto flex flex-wrap gap-2 justify-center mb-8">
+      <button id="cat-all" onclick="filterServices('all')" class="cat-btn px-4 py-2 rounded-full capitalize font-medium transition-all bg-indigo-600 text-white">الكل</button>
+      <button id="cat-courses" onclick="filterServices('courses')" class="cat-btn px-4 py-2 rounded-full capitalize font-medium transition-all bg-gray-700 text-gray-200 hover:bg-gray-600">دورات</button>
+      <button id="cat-design" onclick="filterServices('design')" class="cat-btn px-4 py-2 rounded-full capitalize font-medium transition-all bg-gray-700 text-gray-200 hover:bg-gray-600">تصميم</button>
+      <button id="cat-webdev" onclick="filterServices('webdev')" class="cat-btn px-4 py-2 rounded-full capitalize font-medium transition-all bg-gray-700 text-gray-200 hover:bg-gray-600">تطوير ويب</button>
+      <button id="cat-marketing" onclick="filterServices('marketing')" class="cat-btn px-4 py-2 rounded-full capitalize font-medium transition-all bg-gray-700 text-gray-200 hover:bg-gray-600">تسويق</button>
+      <button id="cat-automation" onclick="filterServices('automation')" class="cat-btn px-4 py-2 rounded-full capitalize font-medium transition-all bg-gray-700 text-gray-200 hover:bg-gray-600">أتمتة</button>
+      <button id="cat-security" onclick="filterServices('security')" class="cat-btn px-4 py-2 rounded-full capitalize font-medium transition-all bg-gray-700 text-gray-200 hover:bg-gray-600">أمن سيبراني</button>
+      <button id="cat-mobile" onclick="filterServices('mobile')" class="cat-btn px-4 py-2 rounded-full capitalize font-medium transition-all bg-gray-700 text-gray-200 hover:bg-gray-600">تطبيقات</button>
+      <button id="cat-seo" onclick="filterServices('seo')" class="cat-btn px-4 py-2 rounded-full capitalize font-medium transition-all bg-gray-700 text-gray-200 hover:bg-gray-600">SEO</button>
+      <button id="cat-writing" onclick="filterServices('writing')" class="cat-btn px-4 py-2 rounded-full capitalize font-medium transition-all bg-gray-700 text-gray-200 hover:bg-gray-600">كتابة</button>
+      <button id="cat-consult" onclick="filterServices('consult')" class="cat-btn px-4 py-2 rounded-full capitalize font-medium transition-all bg-gray-700 text-gray-200 hover:bg-gray-600">استشارات</button>
+      <button id="cat-translate" onclick="filterServices('translate')" class="cat-btn px-4 py-2 rounded-full capitalize font-medium transition-all bg-gray-700 text-gray-200 hover:bg-gray-600">ترجمة</button>
+      <button id="cat-edit" onclick="filterServices('edit')" class="cat-btn px-4 py-2 rounded-full capitalize font-medium transition-all bg-gray-700 text-gray-200 hover:bg-gray-600">مونتاج</button>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section id="services" class="py-12 px-6 bg-gray-900">
+    <script>
+      function filterServices(cat) {
+        document.querySelectorAll('.service-card').forEach(card => {
+          if (cat === 'all' || card.dataset.category === cat) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        document.querySelectorAll('.cat-btn').forEach(btn => {
+          btn.classList.remove('bg-indigo-600', 'text-white');
+          btn.classList.add('bg-gray-700', 'text-gray-200');
+        });
+        document.getElementById('cat-' + cat).classList.add('bg-indigo-600', 'text-white');
+        document.getElementById('cat-' + cat).classList.remove('bg-gray-700', 'text-gray-200');
+      }
+    </script>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Service Cards -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-gray-700 service-card" data-category="courses">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-indigo-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">دورة احتراف بايثون #1</h3>
+        </div>
+        <p class="text-gray-400 mb-4">دورة للمبتدئين تشرح أساسيات لغة بايثون، كتابة السكريبتات، والتعامل مع مكتبات هامة للأمن السيبراني.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$3</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-gray-700 service-card" data-category="design">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-indigo-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.172 2.172a2 2 0 010 2.828l-8.486 8.486a2 2 0 01-2.828 0l-2.172-2.172a2 2 0 010-2.828L8.172 10" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">تصميم شعار</h3>
+        </div>
+        <p class="text-gray-400 mb-4">تصميم شعارات (لوغو) فريدة وجذابة.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$3</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-gray-700 service-card" data-category="webdev">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-indigo-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">إنشاء موقع ويب بسيط</h3>
+        </div>
+        <p class="text-gray-400 mb-4">بناء مواقع ويب بسيطة وتفاعلية.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$5</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-gray-700 service-card" data-category="marketing">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-indigo-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">فيديوهات قصيرة ترويجية</h3>
+        </div>
+        <p class="text-gray-400 mb-4">إنتاج فيديوهات قصيرة للترويج على منصات التواصل الاجتماعي.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$5</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-gray-700 service-card" data-category="automation">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-indigo-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">أتمتة مهام باستخدام Python</h3>
+        </div>
+        <p class="text-gray-400 mb-4">برمجة سكريبتات أتمتة مهام باستخدام لغة بايثون.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$5</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-gray-700 service-card" data-category="security">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-indigo-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">أنظمة حماية وأمان للمواقع</h3>
+        </div>
+        <p class="text-gray-400 mb-4">إعداد أنظمة حماية متقدمة لمواقع الويب والخوادم.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$18</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-gray-700 service-card" data-category="mobile">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-indigo-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">تصميم واجهات تطبيقات موبايل</h3>
+        </div>
+        <p class="text-gray-400 mb-4">تصميم واجهات استخدام UI/UX احترافية لهواتف الأندرويد وiOS.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$10</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-gray-700 service-card" data-category="seo">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-indigo-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">خدمات SEO</h3>
+        </div>
+        <p class="text-gray-400 mb-4">تحسين ترتيب المواقع بمحركات البحث.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$6</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <!-- خدمة جديدة -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-pink-400 service-card" data-category="writing">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-pink-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2a4 4 0 014-4h3m4 0V7a2 2 0 00-2-2h-7a2 2 0 00-2 2v2" /></svg>
+          </div>
+          <h3 class="text-xl font-semibold">كتابة مقالات تقنية</h3>
+        </div>
+        <p class="text-gray-400 mb-4">كتابة مقالات احترافية في مجالات التقنية والبرمجة وتحسين محركات البحث.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$4</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <!-- خدمة جديدة -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-pink-400 service-card" data-category="consult">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-pink-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v4a1 1 0 001 1h3m10 0h3a1 1 0 001-1V7m-1 4V7a2 2 0 00-2-2H5a2 2 0 00-2 2v4m16 0v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6" /></svg>
+          </div>
+          <h3 class="text-xl font-semibold">استشارات تقنية</h3>
+        </div>
+        <p class="text-gray-400 mb-4">تقديم استشارات تقنية في مجالات البرمجة، الأمن السيبراني، والتسويق الرقمي.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$7</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <!-- خدمة جديدة -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-pink-400 service-card" data-category="translate">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-pink-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 17l4 4 4-4m0-5V3a1 1 0 00-1-1H9a1 1 0 00-1 1v9" /></svg>
+          </div>
+          <h3 class="text-xl font-semibold">ترجمة تقنية احترافية</h3>
+        </div>
+        <p class="text-gray-400 mb-4">ترجمة نصوص ومقالات تقنية من وإلى الإنجليزية والعربية بدقة عالية.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$5</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <!-- خدمة جديدة -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-pink-400 service-card" data-category="edit">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-pink-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536M9 13h3l8-8a2.828 2.828 0 00-4-4l-8 8v3zm-2 6h6" /></svg>
+          </div>
+          <h3 class="text-xl font-semibold">مونتاج فيديو احترافي</h3>
+        </div>
+        <p class="text-gray-400 mb-4">مونتاج فيديوهات يوتيوب وسوشيال ميديا بجودة عالية وتأثيرات احترافية.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$8</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <!-- خدمات إضافية للوصول إلى 100 خدمة متنوعة -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-pink-400 service-card" data-category="design">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-pink-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+          </div>
+          <h3 class="text-xl font-semibold">تصميم بوستات سوشيال ميديا</h3>
+        </div>
+        <p class="text-gray-400 mb-4">تصميم منشورات احترافية وجذابة لجميع المنصات الاجتماعية.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$6</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-blue-400 service-card" data-category="webdev">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-blue-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18" /></svg>
+          </div>
+          <h3 class="text-xl font-semibold">موقع تعريفي شخصي/شركة</h3>
+        </div>
+        <p class="text-gray-400 mb-4">تصميم وبرمجة موقع تعريفي احترافي متعدد الصفحات مع معرض أعمال.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$20</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-green-400 service-card" data-category="automation">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-green-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m2 0a8 8 0 11-16 0 8 8 0 0116 0z" /></svg>
+          </div>
+          <h3 class="text-xl font-semibold">بوتات تيليجرام مخصصة</h3>
+        </div>
+        <p class="text-gray-400 mb-4">برمجة بوتات تيليجرام حسب الطلب (إدارة قنوات، رد تلقائي، خدمات).</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$15</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-yellow-400 service-card" data-category="security">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-yellow-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-1.104.896-2 2-2s2 .896 2 2-.896 2-2 2-2-.896-2-2zm0 0V7a4 4 0 00-8 0v4h8z" /></svg>
+          </div>
+          <h3 class="text-xl font-semibold">تدقيق أمان تطبيقات موبايل</h3>
+        </div>
+        <p class="text-gray-400 mb-4">تحليل أمان تطبيقات أندرويد وiOS واكتشاف الثغرات.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$22</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-yellow-600 hover:bg-yellow-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-indigo-400 service-card" data-category="mobile">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-indigo-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17a4 4 0 008 0" /></svg>
+          </div>
+          <h3 class="text-xl font-semibold">تطوير تطبيقات Flutter</h3>
+        </div>
+        <p class="text-gray-400 mb-4">برمجة تطبيقات موبايل هجينة (iOS/Android) باستخدام Flutter.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$30</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-red-400 service-card" data-category="seo">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-red-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a5 5 0 00-10 0v2a2 2 0 00-2 2v7a2 2 0 002 2h10a2 2 0 002-2v-7a2 2 0 00-2-2z" /></svg>
+          </div>
+          <h3 class="text-xl font-semibold">تحليل SEO متقدم</h3>
+        </div>
+        <p class="text-gray-400 mb-4">تحليل شامل لموقعك مع تقرير مفصل لتحسين السيو.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$12</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-purple-400 service-card" data-category="writing">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-purple-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20h9" /></svg>
+          </div>
+          <h3 class="text-xl font-semibold">كتابة سيناريو فيديو</h3>
+        </div>
+        <p class="text-gray-400 mb-4">كتابة سيناريوهات فيديو تسويقي أو تعليمي باحترافية وإبداع.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$10</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-orange-400 service-card" data-category="consult">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-orange-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 17l4 4 4-4m0-5V3a1 1 0 00-1-1H9a1 1 0 00-1 1v9" /></svg>
+          </div>
+          <h3 class="text-xl font-semibold">استشارة تسويق رقمي</h3>
+        </div>
+        <p class="text-gray-400 mb-4">تحليل استراتيجيات التسويق الرقمي وتقديم خطة عمل فعالة.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$14</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-teal-400 service-card" data-category="translate">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-teal-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 17l4 4 4-4m0-5V3a1 1 0 00-1-1H9a1 1 0 00-1 1v9" /></svg>
+          </div>
+          <h3 class="text-xl font-semibold">ترجمة فيديوهات ودبلجة</h3>
+        </div>
+        <p class="text-gray-400 mb-4">ترجمة ودبلجة فيديوهات تعليمية أو تسويقية باحترافية.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$18</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <!-- دفعة جديدة من بطاقات الخدمات المتنوعة -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-cyan-400 service-card" data-category="courses">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-cyan-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 7v-6m0 0l-9-5m9 5l9-5" /></svg>
+          </div>
+          <h3 class="text-xl font-semibold">دورة تطوير تطبيقات ويب متقدمة</h3>
+        </div>
+        <p class="text-gray-400 mb-4">تعلم بناء تطبيقات ويب متقدمة باستخدام أحدث التقنيات (React, Node.js, APIs).</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$25</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-cyan-600 hover:bg-cyan-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-fuchsia-400 service-card" data-category="design">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-fuchsia-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold">تصميم انفوجرافيك احترافي</h3>
+        </div>
+        <p class="text-gray-400 mb-4">إنشاء تصاميم انفوجرافيك جذابة لعرض البيانات والمعلومات بصرياً.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$9</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-fuchsia-600 hover:bg-fuchsia-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-lime-400 service-card" data-category="webdev">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-lime-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold">متجر إلكتروني متكامل</h3>
+        </div>
+        <p class="text-gray-400 mb-4">برمجة وتصميم متجر إلكتروني مع بوابات دفع وإدارة منتجات وطلبات.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$50</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-lime-600 hover:bg-lime-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-emerald-400 service-card" data-category="automation">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-emerald-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+          </div>
+          <h3 class="text-xl font-semibold">أتمتة نشر محتوى سوشيال ميديا</h3>
+        </div>
+        <p class="text-gray-400 mb-4">برمجة سكريبتات لنشر وجدولة المنشورات تلقائياً على المنصات الاجتماعية.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$13</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-amber-400 service-card" data-category="security">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-amber-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-1.104.896-2 2-2s2 .896 2 2-.896 2-2 2-2-.896-2-2zm0 0V7a4 4 0 00-8 0v4h8z" /></svg>
+          </div>
+          <h3 class="text-xl font-semibold">اختبار اختراق شبكات WiFi</h3>
+        </div>
+        <p class="text-gray-400 mb-4">خدمة اختبار أمان شبكات الواي فاي وكشف الثغرات مع تقرير مفصل.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$28</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-amber-600 hover:bg-amber-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-sky-400 service-card" data-category="mobile">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-sky-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="7" y="4" width="10" height="16" rx="2"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold">تطوير تطبيقات iOS أصلية</h3>
+        </div>
+        <p class="text-gray-400 mb-4">برمجة تطبيقات أصلية لأجهزة iPhone وiPad باستخدام Swift.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$40</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-sky-600 hover:bg-sky-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-violet-400 service-card" data-category="seo">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-violet-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold">كتابة محتوى SEO مخصص</h3>
+        </div>
+        <p class="text-gray-400 mb-4">كتابة مقالات وصفحات هبوط متوافقة مع السيو لموقعك.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$11</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-violet-600 hover:bg-violet-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-rose-400 service-card" data-category="writing">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-rose-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20h9" /></svg>
+          </div>
+          <h3 class="text-xl font-semibold">كتابة نصوص إعلانية قصيرة</h3>
+        </div>
+        <p class="text-gray-400 mb-4">كتابة نصوص إبداعية للإعلانات والمنشورات القصيرة.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$7</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-rose-600 hover:bg-rose-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-yellow-300 service-card" data-category="consult">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-yellow-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold">استشارة برمجية متقدمة</h3>
+        </div>
+        <p class="text-gray-400 mb-4">حلول برمجية متقدمة واستشارات في هندسة البرمجيات وتصميم الأنظمة.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$35</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-yellow-400 hover:bg-yellow-500 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-green-300 service-card" data-category="translate">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-green-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold">ترجمة مستندات رسمية</h3>
+        </div>
+        <p class="text-gray-400 mb-4">ترجمة مستندات رسمية وقانونية مع تدقيق لغوي كامل.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$20</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-green-400 hover:bg-green-500 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 border border-gray-400 service-card" data-category="edit">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-gray-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold">مونتاج فيديوهات موشن جرافيك</h3>
+        </div>
+        <p class="text-gray-400 mb-4">مونتاج فيديوهات موشن جرافيك احترافية مع مؤثرات بصرية وصوتية.</p>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-green-400 font-bold text-lg">$22</span>
+          <a href="https://t.me/f4iff" target="_blank" rel="noopener noreferrer" class="bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded-md text-sm font-medium transition">طلب الخدمة</a>
+        </div>
+      </div>
+      <!-- ...تابع إضافة البطاقات حتى الوصول إلى 100 خدمة متنوعة... -->
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-6 bg-gray-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">ابدأ العمل معنا الآن!</h2>
+      <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+        كل ما تحتاجه في مكان واحد! تصميم، برمجة، تسويق، وأمن إلكتروني بجودة عالية وسرعة عالية.
+      </p>
+      <a
+        href="https://t.me/f4iff"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition duration-300"
+      >
+        تواصل عبر تيليجرام @f4iff
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-6 text-center text-gray-500">
+    <p>© 2025 جميع الحقوق محفوظة | خدمات تقنية وتصميمية</p>
+  </footer>
+
+</body>
+</html>
